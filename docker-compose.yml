@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:18-alpine
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_DB: financehub
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?Set DB_PASSWORD in .env}
+    volumes:
+      - financehub_pg_data:/var/lib/postgresql
+
+volumes:
+  financehub_pg_data:
