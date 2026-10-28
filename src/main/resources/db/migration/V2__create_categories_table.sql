@@ -7,6 +7,6 @@ CREATE TABLE categories(
     updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT ck_categories_type CHECK (type IN ('INCOME', 'EXPENSE')),
-    CONSTRAINT uk_categories_user_name_type UNIQUE (user_id, name, type)
+    CONSTRAINT uk_categories_user_name_type UNIQUE (user_id, name, type),
     CONSTRAINT uk_categories_id_user UNIQUE (id, user_id)
 );
