@@ -1,13 +1,15 @@
 package com.pedrorodrigo.financehub.category.dto;
 
+import com.pedrorodrigo.financehub.category.CategoryType;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 public record CreateCategoryRequest(
 
         @NotBlank(message = "Category name cannot be blank")
         String name,
 
-        @NotBlank(message = "Category type cannot be blank")
-        String categoryName
+        @NotNull(message = "Category type is required")
+        CategoryType categoryType
 
 ) {}
