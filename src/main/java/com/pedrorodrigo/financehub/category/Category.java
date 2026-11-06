@@ -29,4 +29,9 @@ public class Category extends AuditableEntity {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
+    public Category(String name, CategoryType categoryType, User user) {
+        this.name = name;
+        this.categoryType = categoryType;
+        this.user = user;
+    }
 }
